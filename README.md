@@ -13,7 +13,7 @@ For Android:
 ## Installation
 
 ```sh
-yarn install @wyplay/react-native-wycdn
+yarn add @wyplay/react-native-wycdn
 ```
 
 ## Configuration for Android
@@ -111,13 +111,21 @@ To allow debugging your app with Metro, you need to create another `network_secu
 
 ### Getting the example app
 
-In the full source of this module, you can refer to the example app for a quick sample code integrating the WyCDN service.
+In the source code of this module, you can refer to the [example app](https://github.com/wyplay/wycdn-agent-reactnative/-/tree/main/example) for a quick sample code integrating the WyCDN service.
 
-For a more advanced example, you may refer to the sample code of the **WyCDN sample app for React Native**.
+For a more advanced example, you may refer to the sample code of the [WyCDN React Native sample app](https://github.com/wyplay/wycdn-sampleapp-reactnative).
 
 ### Running the example app
 
-Prepare the example app:
+Get the [source code](https://github.com/wyplay/wycdn-agent-reactnative) of this module.
+
+In a shell, run from the _root_ of the project:
+
+```sh
+yarn start
+```
+
+In another shell, prepare the example app:
 
 ```sh
 yarn
