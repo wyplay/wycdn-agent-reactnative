@@ -74,7 +74,9 @@ In order to communicate with the WyCDN proxy, you app need to allow cleartext tr
 
 #### Add a networkSecurityConfig to AndroidManifest.xml
 
-To enable the network security configuration, you need to add the following attribute to your application's tag in the `AndroidManifest.xml` file:
+To enable the network security configuration, you need to add the following attribute to your application's tag in the `AndroidManifest.xml` file in the `src/main` directory.
+
+_src/main/AndroidManifest.xml content:_
 
 ```xml
 <application
@@ -88,6 +90,8 @@ To enable the network security configuration, you need to add the following attr
 
 Next, you need to create a new XML file named `network_security_config.xml` in the `src/main/res/xml` directory of your project.  If the `res/xml` directory does not exist, create it.
 
+_src/main/res/xml/network_security_config.xml content:_
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
@@ -99,11 +103,13 @@ Next, you need to create a new XML file named `network_security_config.xml` in t
 
 To allow debugging your app with Metro, you need to create another `network_security_config.xml` file in the `src/debug/res/xml` directory of your project. This configuration will only be used for debug builds.
 
+_src/debug/res/xml/network_security_config.xml content:_
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
-  <base-config cleartextTrafficPermitted="true">
-  </base-config>
+    <base-config cleartextTrafficPermitted="true">
+    </base-config>
 </network-security-config>
 ```
 
@@ -111,7 +117,7 @@ To allow debugging your app with Metro, you need to create another `network_secu
 
 ### Getting the example app
 
-In the source code of this module, you can refer to the [example app](https://github.com/wyplay/wycdn-agent-reactnative/-/tree/main/example) for a quick sample code integrating the WyCDN service.
+In the source code of this module, you can refer to the [example app](https://github.com/wyplay/wycdn-agent-reactnative/tree/main/example) for a quick sample code integrating the WyCDN service.
 
 For a more advanced example, you may refer to the sample code of the [WyCDN React Native sample app](https://github.com/wyplay/wycdn-sampleapp-reactnative).
 
@@ -119,7 +125,7 @@ For a more advanced example, you may refer to the sample code of the [WyCDN Reac
 
 Get the [source code](https://github.com/wyplay/wycdn-agent-reactnative) of this module.
 
-In a shell, run from the _root_ of the project:
+In a shell, run from the root of the project:
 
 ```sh
 yarn start

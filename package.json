@@ -1,6 +1,6 @@
 {
   "name": "@wyplay/react-native-wycdn",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A React Native module that allows integration of WyCDN into mobile and TV applications.",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
