@@ -109,6 +109,25 @@ _src/debug/res/xml/network_security_config.xml content:_
 </network-security-config>
 ```
 
+## Configuration for iOS
+
+### 1. Ensure the iOS minimum deployment target is compatible with WyCDN agent
+
+At the beginning of the `Podfile` of your project:
+
+```ruby
+platform :ios, '15.0'
+```
+
+### 2. Add Wyplay podspecs repository
+
+At the beginning of the `Podfile` of your project:
+
+```ruby
+source 'https://cdn.cocoapods.org'
+source 'git@github.com:wyplay/wycdn-agent-podspecs.git'
+```
+
 ## Integration example
 
 ### Getting the example app
