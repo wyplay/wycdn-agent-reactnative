@@ -51,20 +51,16 @@ allprojects {
 
 ### 3. Declare properties in gradle.properties
 
-In your application `gradle.properties` file, declare the following properties for WyCDN version and repository credentials:
+In your application `gradle.properties` file, declare the following properties for WyCDN repository credentials:
 
 ```properties
-# Set the version of WyCDN service below or using command-line
-# (eg: `./gradlew build -P wycdnServiceVersion=x.y.z).
-wycdnServiceVersion=VERSION_PLACEHOLDER
-
 # Set wyplayRepositoryReleases repository username and password below or using command-line
 # (eg: `./gradlew build -P wyplayRepositoryReleasesUsername=username -P wyplayRepositoryReleasesPassword=password`).
 wyplayRepositoryReleasesUsername=USERNAME_PLACEHOLDER
 wyplayRepositoryReleasesPassword=PASSWORD_PLACEHOLDER
 ```
 
-Replace `VERSION_PLACEHOLDER`, `USERNAME_PLACEHOLDER`, `PASSWORD_PLACEHOLDER` with values given by Wyplay.
+Replace `USERNAME_PLACEHOLDER`, `PASSWORD_PLACEHOLDER` with values given by Wyplay.
 
 This ensures that your project can download the required WyCDN service dependencies from Wyplay Maven repository.
 

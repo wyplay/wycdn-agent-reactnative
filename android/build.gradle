@@ -1,3 +1,5 @@
+import groovy.json.JsonSlurper
+
 buildscript {
   // Buildscript is evaluated before everything else so we can't use getExtOrDefault
   def kotlin_version = rootProject.ext.has("kotlinVersion") ? rootProject.ext.get("kotlinVersion") : project.properties["Wycdn_kotlinVersion"]
@@ -36,6 +38,14 @@ def getExtOrDefault(name) {
 
 def getExtOrIntegerDefault(name) {
   return rootProject.ext.has(name) ? rootProject.ext.get(name) : (project.properties["Wycdn_" + name]).toInteger()
+}
+
+def getWycdnPackageVersion() {
+  def packageJsonFile = file("${projectDir}/../package.json")
+  if (!packageJsonFile.exists())
+    throw new GradleException("Package \"${packageJsonFile}\" not found.")
+  def json = new JsonSlurper().parse(packageJsonFile)
+  return json.version ?: "0"
 }
 
 def supportsNamespace() {
@@ -88,7 +98,7 @@ repositories {
 }
 
 def kotlin_version = getExtOrDefault("kotlinVersion")
-def wycdn_service_version = getExtOrDefault("wycdnServiceVersion")
+def wycdn_service_version = getWycdnPackageVersion()
 
 dependencies {
   // For < 0.71, this will be from the local maven repo
@@ -98,6 +108,5 @@ dependencies {
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
   // The version of WyCDN to use
-  // It should be set in root project gradle.properties file: wycdnServiceVersion=x.y.z
   implementation "com.wyplay.wycdn:wycdn-service:$wycdn_service_version"
 }
