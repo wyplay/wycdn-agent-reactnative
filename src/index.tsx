@@ -24,6 +24,16 @@ type WycdnType = {
   stopWycdn: () => Promise<void>;
 
   /**
+   * Sets WyCDN default properties.
+   *
+   * This method will used to setup default WyCDN properties (app paths, device type, etc).
+   *
+   * @returns {Promise<void>} A promise that resolves when default properties are properly set.
+   * @throws {Error} Throws an error with a "WYCDN_CONFIG_PROPERTY_ERROR" code if the method fails.
+   */
+  loadDefaultProperties: () => Promise<void>;
+
+  /**
    * Sets the WyCDN configuration from an asset file.
    *
    * The configuration will only be applied when the service is starting.
@@ -66,4 +76,4 @@ const Wycdn: WycdnType = NativeModules.Wycdn
     );
 
 export default Wycdn;
-export const { startWycdn, stopWycdn, setConfigFromAssets, setConfigProperty } = Wycdn;
+export const { startWycdn, stopWycdn, loadDefaultProperties, setConfigFromAssets, setConfigProperty } = Wycdn;

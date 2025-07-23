@@ -54,6 +54,18 @@ class WycdnModule(reactContext: ReactApplicationContext) :
   }
 
   /**
+   * Sets WyCDN default properties.
+   *
+   * This method will used to setup default WyCDN properties (app paths, device type, etc).
+   *
+   * @param promise The `Promise` that resolves when default properties are properly set.
+   */
+  @ReactMethod
+  fun loadDefaultProperties(promise: Promise) {
+    promise.resolve(null)
+  }
+
+  /**
    * Stops the WyCDN service.
    *
    * Attempts to unbind from the WyCDN service. If successful, resolves the promise;
